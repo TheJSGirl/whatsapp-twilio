@@ -32,6 +32,17 @@ app.post('/', async(req, res) => {
       .catch((e) => console.log('error', e))
       .done();
 });
+
+app.post('/callback', async(req, res) => {
+  console.log(req.body)
+  res.status(200).send()
+});
+
+app.post('/receive', async(req, res) => {
+  console.log(req.body)
+  res.status(200).send()
+});
+
       
 
 app.listen(port, () => {
