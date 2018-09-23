@@ -13,9 +13,10 @@ const authToken = '07e580a25d06793666955b5263f3d3eb';
 const client = require('twilio')(accountSid, authToken);
 
 
+
 app.post('/', async(req, res) => {
   const { mobile, text} = req.body;
-  await client.messages
+  await  client.messages
       .create({
         body: text,
         from:'whatsapp:+14155238886',
@@ -30,7 +31,7 @@ app.post('/', async(req, res) => {
       })
       .catch((e) => console.log('error', e))
       .done();
-})
+});
       
 
 app.listen(port, () => {
